@@ -23,7 +23,7 @@ ul {
 	width: 300px;
 }
 
-.widget {
+#dashboard > div {
 	border: 2px solid #bbb;
 	margin: 9px;
 	padding: 9px;

@@ -1,7 +1,7 @@
 - widget_div do
   %ul
     - for tweet in @tweets
-      %li
+      %li{'data-id' => tweet.id}
         = tweet.text
 
   %p
@@ -13,10 +13,11 @@
     = submit_tag "Tweet!"
   
   :javascript
-    var form = $("##{@name} form");
+    var form = $("##{widget_id} form");
   
     form.submit(function() {
       $.ajax({url: form.attr("data-event-url"), data: form.serialize()})
       return false;
     });
-  
+    
+    $("##{widget_id} li").draggable({revert: "invalid"});

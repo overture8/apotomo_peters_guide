@@ -1,0 +1,9 @@
+- widget_div do
+  = image_tag "trashbin_empty.png", 'data-event-url' => url_for_event(:drop), :id => "trashbin"
+  
+  :javascript
+    $("#trashbin").droppable({
+      drop: function(event, ui) {
+        $.ajax({url: $("#trashbin").attr("data-event-url") + "&id=" + ui.draggable.attr("data-id")});
+      }
+    });
