@@ -1,6 +1,10 @@
 class TwitterWidget < Apotomo::Widget
   responds_to_event :submit, :with => :process_tweet
   
+  after_add do |me, parent|
+    me.root.respond_to_event :tweetDeleted, :with => :redraw, :on => me.name
+  end
+  
   def display_form
     @tweets = Tweet.find(:all)
     render
