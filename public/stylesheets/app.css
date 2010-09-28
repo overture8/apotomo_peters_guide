@@ -5,3 +5,21 @@
 .portlet-content { padding: 0.4em; }
 .ui-sortable-placeholder { border: 1px dotted black; visibility: visible !important; height: 50px !important; }
 .ui-sortable-placeholder * { visibility: hidden; }
+
+#parrot li {
+  list-style-type: none;
+  margin: 0 0 0.25em;
+	
+	background:none repeat scroll 0 0 darkgrey;
+	color:#EEEEEE;
+	display:block;
+	padding:0.25em;
+	text-decoration:none;
+	width:12em;
+}
+
+#parrot ul {
+	margin: 0;
+	padding: 0;
+	width: 0;
+}

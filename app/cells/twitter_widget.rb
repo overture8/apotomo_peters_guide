@@ -14,11 +14,11 @@ class TwitterWidget < Apotomo::Widget
     Tweet.new(:text => param(:text)).save
     
     @tweets = Tweet.find(:all) # this is wet!
-    replace :view => :display_form
+    update :view => :display_form
   end
   
   def redraw
-    replace :state => :display_form
+    update :state => :display_form
   end
   
 end
