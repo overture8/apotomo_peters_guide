@@ -7,7 +7,7 @@ class TwitterWidget < Apotomo::Widget
   
   def display_form
     @tweets = Tweet.find(:all)
-    render
+    render :layout => 'portlet'
   end
   
   def process_tweet

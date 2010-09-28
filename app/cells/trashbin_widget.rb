@@ -2,7 +2,7 @@ class TrashbinWidget < Apotomo::Widget
   responds_to_event :drop, :with => :trash
   
   def display
-    render
+    render :layout => 'portlet'
   end
   
   def trash
