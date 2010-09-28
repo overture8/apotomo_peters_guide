@@ -3,7 +3,7 @@ class DashboardController < ApplicationController
 
   has_widgets do |root|
     root << widget(:twitter_widget, 'parrot', :display_form)
-    root << widget(:trashbin_widget, 'bin', :display)
+    root << widget(:trashbin_widget, 'bin', :display, :title => "Trash tweets here!")
   end
 
   def index
