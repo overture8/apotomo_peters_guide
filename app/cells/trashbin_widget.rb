@@ -1,15 +1,13 @@
 class TrashbinWidget < Apotomo::Widget
   responds_to_event :drop, :with => :trash
   
+  after_initialize :setup!
+  
   def display
-    setup!
-    
     render :layout => 'portlet'
   end
   
   def trash
-    setup!
-    
     Tweet.find(params[:id]).delete
     trigger :tweetDeleted
     
@@ -17,7 +15,7 @@ class TrashbinWidget < Apotomo::Widget
   end
   
 private
-  def setup!
+  def setup!(*)
     @title = @opts[:title]
   end
 end
