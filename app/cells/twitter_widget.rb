@@ -6,7 +6,10 @@ class TwitterWidget < Apotomo::Widget
   end
   
   def display_form
-    @tweets = Tweet.find(:all)
+    for t in Tweet.find(:all)
+      self << widget(:tweet_widget, "tweet-#{t.id}", :display, :tweet => t)
+    end
+    
     render :layout => 'portlet'
   end
   

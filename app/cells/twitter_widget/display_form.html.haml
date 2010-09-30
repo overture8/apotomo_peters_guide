@@ -1,7 +1,5 @@
 %ul
-  - for tweet in @tweets
-    %li{'data-id' => tweet.id}
-      = tweet.text
+  = rendered_children.values.join("\n")
 
 %p
   What are you up to?
