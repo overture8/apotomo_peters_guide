@@ -23,3 +23,8 @@
 	padding: 0;
 	width: 0;
 }
+
+#parrot li img {
+	float: right;
+	margin-right: 3px;
+}

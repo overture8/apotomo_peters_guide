@@ -5,11 +5,13 @@ class TwitterWidget < Apotomo::Widget
     me.root.respond_to_event :tweetDeleted, :with => :redraw, :on => me.name
   end
   
-  def display_form
+  has_widgets do |me|
     for t in Tweet.find(:all)
-      self << widget(:tweet_widget, "tweet-#{t.id}", :display, :tweet => t)
+      me << widget(:tweet_widget, "tweet-#{t.id}", :display, :tweet => t)
     end
-    
+  end
+  
+  def display_form
     render :layout => 'portlet'
   end
   
