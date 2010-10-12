@@ -28,3 +28,18 @@
 	float: right;
 	margin-right: 3px;
 }
+
+#parrot input {
+	width: 240px;
+}
+
+#errorExplanation {
+	background-color: grey;
+	padding: 8px;
+}
+#errorExplanation {
+	font-size: 9pt;
+}
+#errorExplanation h2 {
+	font-size: 12pt;
+}
