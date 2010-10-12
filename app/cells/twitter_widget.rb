@@ -6,8 +6,15 @@ class TwitterWidget < Apotomo::Widget
   end
   
   has_widgets do |me|
+    synchronize_with_model!
+  end
+  
+  def synchronize_with_model!
     for t in Tweet.find(:all)
-      me << widget(:tweet_widget, "tweet-#{t.id}", :display, :tweet => t)
+      child_id = "tweet-#{t.id}"
+      next if self[child_id]  # we already added it.
+      
+      self << widget(:tweet_widget, child_id, :display, :tweet => t)
     end
   end
   
@@ -16,8 +23,10 @@ class TwitterWidget < Apotomo::Widget
   end
   
   def process_tweet
-    @tweet = Tweet.new 
+    @tweet = Tweet.new
     @tweet.update_attributes(param(:tweet))
+    
+    synchronize_with_model!
     
     update :view => :display_form
   end
