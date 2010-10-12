@@ -10,6 +10,7 @@ class TwitterWidget < Apotomo::Widget
   end
   
   def synchronize_with_model!
+    remove_all!
     for t in Tweet.find(:all)
       child_id = "tweet-#{t.id}"
       next if self[child_id]  # we already added it.
@@ -32,6 +33,8 @@ class TwitterWidget < Apotomo::Widget
   end
   
   def redraw
+    synchronize_with_model!
+    
     update :view => :display_form
   end
   
