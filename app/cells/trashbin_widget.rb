@@ -16,6 +16,6 @@ class TrashbinWidget < Apotomo::Widget
   
 private
   def setup!(*)
-    @title = @opts[:title]
+    @title = param(:title)
   end
 end

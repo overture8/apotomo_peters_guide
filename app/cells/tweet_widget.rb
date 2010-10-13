@@ -2,7 +2,7 @@ class TweetWidget < Apotomo::Widget
   responds_to_event :heart, :with => :toggle
   
   def display
-    @tweet = @opts[:tweet]
+    @tweet = param(:tweet)
     render
   end
   
