@@ -1,11 +1,11 @@
 %ul
-  = rendered_children.values.join("\n")
+  = rendered_children.values.join("\n").html_safe
 
 %p
   What are you up to?
 
-- form_for :tweet, @tweet, :html => {"data-event-url" => url_for_event(:submit)} do |f|
-  = f.error_messages
+= form_for :tweet, @tweet, :html => {"data-event-url" => url_for_event(:submit)}, :url => "" do |f|
+  = error_messages_for :tweet
   = f.text_field :text
 
   = submit_tag "Tweet!"
