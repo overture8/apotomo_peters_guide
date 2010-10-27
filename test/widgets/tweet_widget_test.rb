@@ -1,8 +1,12 @@
 require "test_helper"
 
-class TweetWidgetTest < Test::Unit::TestCase
-  test "a first test" do
-    html = widget(:tweet_widget, :display, 'my_tweet_widget').invoke
-    assert_selekt html, "p"
+class TweetWidgetTest < Apotomo::TestCase
+  has_widgets do |root|
+    root << widget(:tweet_widget, 'me', :tweet => Tweet.find(:first))
+  end
+  
+  def test_render
+    render_widget 'me'
+    assert_select "li#me" # TODO: test data-event-url, too.
   end
 end
