@@ -3,7 +3,7 @@ require 'test_helper'
 class TrashbinWidgetTest < Apotomo::TestCase
     
   has_widgets do |root|
-    root << widget(:trashbin_widget, 'me')
+    root << widget("twitter/trashbin_widget", 'me')
   end
   
   test "display" do

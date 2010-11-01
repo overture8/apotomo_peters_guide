@@ -1,8 +1,8 @@
 require "test_helper"
 
-class TwitterWidgetTest < Apotomo::TestCase
+class PanelTest < Apotomo::TestCase
   has_widgets do |root|
-    root << widget(:twitter_widget, 'me', :display_form)
+    root << widget("twitter/panel", 'me', :display_form)
   end
   
   test "should render" do

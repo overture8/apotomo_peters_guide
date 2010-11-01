@@ -2,7 +2,7 @@ require "test_helper"
 
 class TweetWidgetTest < Apotomo::TestCase
   has_widgets do |root|
-    root << widget(:tweet_widget, 'me', :tweet => Tweet.find(:first))
+    root << widget("twitter/tweet_widget", 'me', :tweet => Tweet.find(:first))
   end
   
   def test_render
