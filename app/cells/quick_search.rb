@@ -6,9 +6,11 @@ class QuickSearch < Apotomo::Widget
   end
   
   def search
-    tweets = Tweet.find(:all, :conditions => "text LIKE '%#{param(:term)}%'")  
-    tweets.collect do |t|
-      {:label => t.text}
-    end.to_json
+      items = Tweet.find(:all, :conditions => "text LIKE '%#{param(:term)}%'").
+      collect do |t|
+        {:label => t.text}
+      end
+      
+      render :text => items.to_json
   end
 end
