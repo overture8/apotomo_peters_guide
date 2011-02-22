@@ -6,7 +6,7 @@
 .ui-sortable-placeholder { border: 1px dotted black; visibility: visible !important; height: 50px !important; }
 .ui-sortable-placeholder * { visibility: hidden; }
 
-#parrot li {
+#twitter li {
   list-style-type: none;
   margin: 0 0 0.25em;
 	
@@ -18,18 +18,18 @@
 	width:12em;
 }
 
-#parrot ul {
+#twitter ul {
 	margin: 0;
 	padding: 0;
 	width: 0;
 }
 
-#parrot li img {
+#twitter li img {
 	float: right;
 	margin-right: 3px;
 }
 
-#parrot input {
+#twitter input {
 	width: 240px;
 }
 
