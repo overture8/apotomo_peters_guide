@@ -11,11 +11,3 @@
     = text_field_tag 'text'
    
     = submit_tag "Tweet!"
-   
-  :javascript
-    var form = $("##{widget_id} form");
-   
-    form.submit(function() {
-      $.ajax({url: form.attr("action"), data: form.serialize()})
-      return false;
-    });
