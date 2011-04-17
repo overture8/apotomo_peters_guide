@@ -1,8 +1,7 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.0.0'
-gem 'apotomo', :path => '/home/nick/projects/apotomo', :require => 'apotomo'
-#gem 'apotomo', '~>1.0.0.beta1', :require => 'apotomo'
+gem 'apotomo'
 gem 'haml'
 
 # Bundle edge Rails instead:
